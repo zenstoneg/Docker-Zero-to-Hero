@@ -13,7 +13,7 @@
 //ENTRYPOINT ["python3"]
 //CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
-FROM ubuntu:20.04  # or your desired base image
+FROM ubuntu
 
 # Update and install Python, pip
 RUN apt-get update && \
