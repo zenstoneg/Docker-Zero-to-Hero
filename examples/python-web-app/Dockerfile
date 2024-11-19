@@ -20,8 +20,7 @@ WORKDIR /devops
 
 # Set the virtual environment's python and pip as the default for future commands
 ENV PATH="/env/bin:$PATH"
-
-//ENTRYPOINT ["python3"]
+#ENTRYPOINT ["python3"]
 CMD ["/env/bin/python","manage.py", "runserver", "0.0.0.0:8000"]
 
 
