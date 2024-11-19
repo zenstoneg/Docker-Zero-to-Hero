@@ -9,6 +9,7 @@ RUN apt-get update && \
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt /tmp/requirements.txt
+COPY devops /app
 
 # Create a virtual environment inside the container
 RUN python3 -m venv /env
@@ -20,8 +21,8 @@ WORKDIR /devops
 
 # Set the virtual environment's python and pip as the default for future commands
 ENV PATH="/env/bin:$PATH"
-#ENTRYPOINT ["python3"]
-CMD ["/env/bin/python","manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["python3"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
 
 
