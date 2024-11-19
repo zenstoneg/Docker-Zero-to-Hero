@@ -14,8 +14,10 @@ COPY requirements.txt /tmp/requirements.txt
 RUN python3 -m venv /env
 # Install pip packages inside the virtual environment
 RUN /env/bin/pip install --upgrade pip && \
-    /env/bin/pip install -r /tmp/requirements.txt && \
-    cd devops
+    /env/bin/pip install -r /tmp/requirements.txt 
+
+WORKDIR /devops
+
 # Set the virtual environment's python and pip as the default for future commands
 ENV PATH="/env/bin:$PATH"
 
